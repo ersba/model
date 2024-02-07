@@ -15,9 +15,6 @@ namespace EpidemicSpreadWithoutTensors.Model
         [PropertyDescription]
         public int MyStage { get; set; }
         
-        [PropertyDescription]
-        public int Steps { get; set; }
-        
         [PropertyDescription] 
         public UnregisterAgent UnregisterHandle { get; set; }
         
@@ -37,7 +34,7 @@ namespace EpidemicSpreadWithoutTensors.Model
         {
             _infectionLayer = layer;
             _infectionLayer.ContactEnvironment.Insert(this);
-            _infinityTime = Steps + 1;
+            _infinityTime = Params.Steps + 1;
             InitStage();
             InitTimeVariables();
             InitMeanInteractions();
@@ -79,7 +76,7 @@ namespace EpidemicSpreadWithoutTensors.Model
                     break;
                 case (int)Stage.Exposed:
                     InfectedTime = 0;
-                    _nextStageTime = Steps + Params.ExposedToInfectedTime;
+                    _nextStageTime = Params.Steps + Params.ExposedToInfectedTime;
                     break;
                 case (int)Stage.Infected:
                     InfectedTime = 1 - Params.ExposedToInfectedTime;

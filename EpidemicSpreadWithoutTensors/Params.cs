@@ -1,4 +1,4 @@
-﻿namespace EpidemicSpreadWithoutTensors.Model
+﻿namespace EpidemicSpreadWithoutTensors
 {
     public static class Params
     {
@@ -23,5 +23,9 @@
         public static readonly float[] Susceptibility = {0.35f, 0.69f, 1.03f, 1.03f, 1.03f, 1.03f, 1.27f, 1.52f};
         
         public static readonly float[] Infector = {0.0f, 0.33f, 0.72f, 0.0f, 0.0f};
+
+        public static int Steps = 0;
+
+        public static int AgentCount = 0;
     }
 }

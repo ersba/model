@@ -8,29 +8,13 @@
 	},
 	"layers":[
 		{
-			"name":"InfectionLayer",
-			"mapping": [
-				{
-					"parameter": "Steps",
-					"value": 50
-				},
-				{
-					"parameter": "AgentCount",
-					"value": 5000
-				}
-			]
+			"name":"InfectionLayer"
 		}
 	],
 	"agents":[
 		{
 			"name": "Host",
 			"count": 5000,
-			"mapping": [
-				{
-					"parameter": "Steps",
-					"value": 50
-				}
-			],
 			"file": "Resources/hosts_data.csv"
 		}
 	]

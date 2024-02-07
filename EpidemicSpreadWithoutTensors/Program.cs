@@ -20,7 +20,8 @@ namespace EpidemicSpreadWithoutTensors
             // use config.json 
             var file = File.ReadAllText("config.json");
             var config = SimulationConfig.Deserialize(file);
-
+            Params.Steps = (int)(config.Globals.Steps?? 0);
+            Params.AgentCount = config.AgentMappings[0].InstanceCount ?? 0;
             var starter = SimulationStarter.Start(description, config);
             var handle = starter.Run();
             Console.WriteLine("Successfully executed iterations: " + handle.Iterations);

@@ -18,14 +18,14 @@ namespace EpidemicSpreadWithoutTensors.Model
                 _edges[host.Index] = new List<Host>();
         }
         
-        public void ReadCSV(int limit)
+        public void ReadCSV()
         {
             foreach (var line in File.ReadAllLines("Resources/contact_edges.csv"))
             {
                 var splitLine = line.Split(',');
                 int hostIndex0 = int.Parse(splitLine[0]);
                 int hostIndex1 = int.Parse(splitLine[1]);
-                if (hostIndex0 < limit && hostIndex1 < limit)
+                if (hostIndex0 < Params.AgentCount && hostIndex1 < Params.AgentCount)
                 {
                     Host host0 = _hosts[hostIndex0];
                     Host host1 = _hosts[hostIndex1];
